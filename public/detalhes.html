@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes da Vaga – UpLife Educacional</title>
+  <style>
+    :root {
+      --orange: #f78c00;
+      --dark-orange: #e65100;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff8f0;
+      margin: 0;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(90deg, #f78c1e 0%, #f26500 50%, #e65100 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      z-index: 10;
+    }
+
+    header img.logo {
+      height: 150px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-buttons a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 25px;
+    }
+
+    .social-icons img {
+      width: 36px;
+      margin-left: 14px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto 40px;
+      padding: 30px 25px;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: #e65100;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .btn-candidatar {
+      display: inline-block;
+      padding: 14px 30px;
+      margin-top: 20px;
+      background: #f97316;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .curso-recomendado {
+      margin-top: 50px;
+    }
+
+    .curso {
+      border: 3px solid var(--dark-orange);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .curso img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .curso h3 {
+      color: #e65100;
+      margin-top: 15px;
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    .bloco-tecnico {
+      margin-top: 40px;
+      background: #ffffff;
+      padding: 25px;
+      border: 3px solid var(--dark-orange);
+      border-radius: 12px;
+    }
+
+    .bloco-tecnico h3 {
+      color: #e65100;
+    }
+
+    .bloco-tecnico a {
+      display: inline-block;
+      margin-top: 12px;
+      background: #25d366;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .botao-voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--orange);
+      font-weight: bold;
+      font-size: 23px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .botao-voltar svg {
+      width: 31px;
+      height: 31px;
+      stroke: var(--orange);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .botao-voltar:hover {
+      color: var(--dark-orange);
+    }
+
+    .whatsapp-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .whatsapp-link {
+      display: flex;
+      align-items: center;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .whatsapp-link img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .whatsapp-link:hover {
+      background-color: #1ebc57;
+    }
+
+    /* --- AJUSTES PARA CELULAR --- */
+@media(max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+  }
+
+  header img.logo {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-buttons a {
+    font-size: 18px;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .social-icons img {
+    width: 28px;
+    margin-left: 8px;
+  }
+
+  .container {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn-candidatar {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .curso h3, .bloco-tecnico h3 {
+    font-size: 20px;
+  }
+
+  .botao-voltar {
+    font-size: 18px;
+    margin: 15px;
+  }
+
+  .botao-voltar svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* WhatsApp flutuante */
+  .whatsapp-container {
+    bottom: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+
+  .whatsapp-link {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-link img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="Logo (2).png" class="logo" alt="UpLife Educacional Logo" />
+    </a>
+    <nav class="nav-buttons">
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="vaga-personalizada.html">Vaga Personalizada</a>
+      <a href="https://uplifecursosetreinamentos.com.br/" target="_blank">Nossos Cursos</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/uplifeeducacional_/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+      <a href="https://www.facebook.com/profile.php?id=61564648928257&mibextid=LQQJ4d" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+      <a href="https://wa.me/4198505518" target="_blank"><img src="whats.png" alt="WhatsApp"></a>
+    </div>
+  </header>
+
+  <a href="index.html" class="botao-voltar" title="Voltar ao Início">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <polyline points="15 18 9 12 15 6" />
+    </svg>
+    Voltar
+  </a>
+
+  <div class="container" id="vagaDetalhe"></div>
+
+  <script>
+  async function carregarDetalhes() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const res = await fetch(`/api/vagas/${id}`);
+    const vaga = await res.json();
+
+    const container = document.getElementById('vagaDetalhe');
+
+    if (!vaga || !vaga.id) {
+      container.innerHTML = "<p>Vaga não encontrada.</p>";
+      return;
+    }
+
+    container.innerHTML = `
+      <h2>${vaga.titulo}</h2>
+      <p><strong>Empresa:</strong> ${vaga.empresa || '-'}</p>
+      <p><strong>Função:</strong> ${vaga.funcao || '-'}</p>
+      <p><strong>Local:</strong> ${vaga.local}</p>
+      <p><strong>Área:</strong> ${vaga.area}</p>
+      <p><strong>Descrição:</strong><br>${vaga.descricao.replace(/\n/g, '<br>')}</p>
+      <a href="${vaga.link}" target="_blank" class="btn-candidatar">Candidatar-se</a>
+    `;
+
+    const blocosContainer = document.createElement('div');
+    container.appendChild(blocosContainer);
+
+    if (vaga.curso && vaga.curso.nome) {
+      const cursoSection = document.createElement('div');
+      cursoSection.className = 'curso-recomendado';
+      cursoSection.innerHTML = `<h2>Não Está Preparado para essa vaga? Nós Temos a Solução</h2>`;
+      blocosContainer.appendChild(cursoSection);
+
+      if (vaga.tecnicoCompetencia) {
+        const blocoTecnico = document.createElement('div');
+        blocoTecnico.className = 'bloco-tecnico';
+        blocoTecnico.innerHTML = `
+          <h3>Técnico por Competência</h3>
+          <p>Conquiste seu diploma técnico de forma mais rápida, reconhecendo suas experiências e habilidades. Clique abaixo e entenda como funciona o Técnico por Competência!</p>
+          <a href="https://wa.me/554198505518?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20saber%20mais%20sobre%20o%20T%C3%A9cnico%20por%20Compet%C3%AAncia." 
+            target="_blank" 
+            class="whatsapp-link" 
+            style="margin-top: 15px; display: inline-flex;">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+            Falar com Jeverson
+          </a>
+        `;
+        cursoSection.appendChild(blocoTecnico);
+      }
+
+      const cursoDiv = document.createElement('div');
+      cursoDiv.className = 'curso';
+      cursoDiv.innerHTML = `
+        <a href="${vaga.curso.link}" target="_blank">
+          <img src="${vaga.curso.imagem}" alt="Curso">
+          <h3>${vaga.curso.nome}</h3>
+          <p>${vaga.curso.descricao}</p>
+        </a>
+      `;
+      cursoSection.appendChild(cursoDiv);
+    } else {
+      
+      if (vaga.tecnicoCompetencia) {
+        const blocoTecnico = document.createElement('div');
+        blocoTecnico.className = 'bloco-tecnico';
+        blocoTecnico.innerHTML = `
+          <h3>Técnico por Competência</h3>
+          <p>Conquiste seu diploma técnico de forma mais rápida, reconhecendo suas experiências e habilidades. Clique abaixo e entenda como funciona o Técnico por Competência!</p>
+          <a href="https://wa.me/554198505518?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20saber%20mais%20sobre%20o%20T%C3%A9cnico%20por%20Compet%C3%AAncia." 
+            target="_blank" 
+            class="whatsapp-link" 
+            style="margin-top: 15px; display: inline-flex;">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+            Falar com Jeverson
+          </a>
+        `;
+        blocosContainer.appendChild(blocoTecnico);
+      }
+    }
+  }
+
+  carregarDetalhes();
+</script>
+
+
+  <div class="whatsapp-container">
+    <a href="https://wa.me/554196924779" target="_blank" class="whatsapp-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      Suporte
+    <a href="https://wa.me/554198505518" target="_blank" class="whatsapp-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      Coordenação
+    </a>
+  </div>
+</body>
+</html>
